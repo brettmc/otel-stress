@@ -1,0 +1,8 @@
+{
+  "name": "brettmc/otel-stress",
+  "require": {
+    "php": ">=8.2",
+    "spiral/roadrunner": "^2",
+    "nyholm/psr7": "*"
+  }
+}

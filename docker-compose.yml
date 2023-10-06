@@ -1,0 +1,16 @@
+version: "3.6"
+
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      RR_RELAY: "unix:///srv/run/rr.sock"
+      RR_NUM_WORKERS: 4
+    volumes:
+      - ./src:/srv/app
+    ports:
+      - "80:8080"
+  ab:
+    image: jordi/ab

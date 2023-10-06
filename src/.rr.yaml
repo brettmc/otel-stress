@@ -1,0 +1,15 @@
+version: '3'
+
+server:
+  relay: ${RR_RELAY} #see docker-compose.yml and openshift/roadrunner/deployment.yaml
+  command: "php index.php"
+  relay_timeout: 5s
+
+http:
+  address: "0.0.0.0:8080"
+  pool:
+    num_workers: ${RR_NUM_WORKERS}
+
+logs:
+  mode: development
+  level: warn
